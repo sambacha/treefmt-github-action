@@ -1,5 +1,5 @@
 
-FROM alpine:3.14
+FROM alpine:3.14 AS builder
 
 
 RUN apk update \
@@ -22,3 +22,7 @@ COPY diff.sh  /usr/local/bin
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT [ "/usr/local/bin/entrypoint.sh"]
+
+FROM alpine:3.14
+COPY --from=builder /usr/local/bin/* /bin/
+CMD ["/bin/treefmt", "-"]
