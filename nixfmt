@@ -1,0 +1,1 @@
+git ls-files | grep '.nix$' | nix-shell -p findutils nixfmt --run "xargs nixfmt"
