@@ -20,5 +20,6 @@ COPY --chmod=0744 ["treefmt", "diff.sh", "entrypoint.sh", "/usr/local/bin"]
 ENTRYPOINT [ "/usr/local/bin/entrypoint.sh"]
 
 FROM alpine:3.14
+ENV ACTIONS_RUNNER_DEBUG=true
 COPY --from=builder /usr/local/bin/* /bin/
 CMD ["/bin/treefmt", "-"]
