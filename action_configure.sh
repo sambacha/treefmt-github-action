@@ -9,3 +9,7 @@ git config --global ssh.maxRequestBuffer 1024M
 
 git config --global pack.windowMemory 256m 
 git config --global pack.packSizeLimit 256m
+
+git config user.name "${GITHUB_ACTOR}"
+git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+git config --global --add safe.directory /github/workspace
