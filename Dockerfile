@@ -1,11 +1,10 @@
 # syntaxdocker/dockerfile-upstream:master-experimental
 FROM alpine:3.15 AS builder
 RUN apk upgrade
-RUN apk update && \
-    apk add --no-cache 
+RUN apk update && apk add --no-cache \
     && apk add --no-cache bash git grep coreutils \
     && rm -rf /var/cache/*/* \
-    && echo "" > /root/.ash_history
+    && echo "" > /root/.ash_history;
 
 # change default shell from ash to bash
 RUN sed -i -e "s/bin\/ash/bin\/bash/" /etc/passwd
