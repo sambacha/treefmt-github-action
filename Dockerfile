@@ -15,7 +15,7 @@ RUN addgroup -g 10001 -S nonroot && adduser -u 10000 -S -G nonroot -h /home/nonr
 WORKDIR /root
 ENV ACTIONS_RUNNER_DEBUG=true
 
-ADD https://github.com/numtide/treefmt/releases/download/v0.4.1/treefmt-x86_64-unknown-linux-musl.tar.gz
+ADD https://github.com/numtide/treefmt/releases/download/v0.4.1/treefmt-x86_64-unknown-linux-musl.tar.gz /
 RUN mv treefmt /usr/local/bin
 
 COPY --chmod=0744 ["entrypoint.sh", "/usr/local/bin"]
