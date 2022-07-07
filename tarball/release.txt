@@ -1,0 +1,4 @@
+treefmt-x86_64-unknown-linux-musl.tar.gz
+treefmt-x86_64-unknown-linux-musl.tar.gz.sha256
+release-2021.1.1
+$Date$
