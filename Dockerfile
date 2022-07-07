@@ -16,12 +16,12 @@ WORKDIR /root
 ENV ACTIONS_RUNNER_DEBUG=true
 
 ADD https://github.com/numtide/treefmt/releases/download/v0.4.1/treefmt-x86_64-unknown-linux-musl.tar.gz /
-RUN mv treefmt /usr/local/bin
+COPY --chmod=0744 ["treefmt", "entrypoint.sh", "/usr/local/bin"]
 
-COPY --chmod=0744 ["entrypoint.sh", "/usr/local/bin"]
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
 FROM alpine:3.15
 ENV ACTIONS_RUNNER_DEBUG=true
+
 COPY --from=builder /usr/local/bin/* /bin/
 CMD ["/bin/treefmt", "-"]
