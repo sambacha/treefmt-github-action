@@ -1,5 +1,10 @@
 #!/bin/sh 
+
+GITHUB_ACTOR=sutbot
 echo "::configure-defaults treefmt-action::"
+
+git config --global diff.algorithm patience
+
 git config --global http.postBuffer 2048M
 git config --global http.maxRequestBuffer 1024M
 git config --global core.compression 9
