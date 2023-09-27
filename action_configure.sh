@@ -18,3 +18,9 @@ git config --global pack.packSizeLimit 256m
 git config user.name "${GITHUB_ACTOR}"
 git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 git config --global --add safe.directory /github/workspace
+
+git config --global diff.submodule log
+git config --global status.submoduleSummary true
+git config --global fetch.recurseSubmodules true
+git config --global push.recurseSubmodules on-demand
+git config --global merge.renamelimit 32767 
