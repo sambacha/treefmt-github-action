@@ -18,3 +18,6 @@ git config --global pack.packSizeLimit 256m
 git config user.name "${GITHUB_ACTOR}"
 git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 git config --global --add safe.directory /github/workspace
+git config --global merge.renameLimit 999999
+# min. value = 33440
+git config --global diff.renameLimit 33440
